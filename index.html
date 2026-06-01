@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>广州咖啡指南 | GZ Coffee Guide</title>
+    <meta name="description" content="一个本地人的广州咖啡探索地图，收录天河、越秀、海珠、荔湾各区精品咖啡店，按区域、风格筛选，找到适合你的那杯。">
+    <meta property="og:title" content="广州咖啡指南">
+    <meta property="og:description" content="一个本地人的广州咖啡探索地图">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════════
+         Hero Section
+         ══════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+        <div class="dot dot-4"></div>
+        <div class="overlap-slash"></div>
+        <div class="corner-accent"></div>
+
+        <div class="hero-inner">
+            <div class="hero-content">
+                <p class="hero-kanji">Guangzhou</p>
+                <h1 class="hero-title">
+                    <span class="word-wrap"><span class="word">广州</span></span>
+                    <span class="word-wrap"><span class="word"><em>Coffee</em></span></span>
+                    <span class="word-wrap"><span class="word">指南</span></span>
+                </h1>
+                <p class="hero-subtitle">用一杯好咖啡，认识这座城市</p>
+                <div class="hero-count">
+                    <div class="hero-count-item">
+                        <div class="hero-count-number" id="shopCount">0</div>
+                        <div class="hero-count-label">家咖啡店</div>
+                    </div>
+                    <div class="hero-count-item">
+                        <div class="hero-count-number" id="areaCount">0</div>
+                        <div class="hero-count-label">个区域</div>
+                    </div>
+                    <div class="hero-count-item">
+                        <div class="hero-count-number" id="avgRating">0</div>
+                        <div class="hero-count-label">平均评分</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <!-- 手绘咖啡杯 SVG -->
+                <svg class="hero-cup-svg" viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M80,120 C78,122 74,130 72,160 C68,200 66,250 70,290 C72,300 78,320 90,330 C100,340 120,345 160,348 C200,350 240,348 280,344 C300,340 310,332 320,320 C328,308 334,290 336,270 C340,230 338,180 334,140 C332,130 328,124 326,120" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <path d="M326,160 C340,162 360,170 370,190 C378,210 376,230 368,248 C360,262 344,270 326,272" stroke="var(--ink)" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+                    <path d="M68,120 C68,115 76,108 90,104 C110,98 140,95 160,94 C200,92 240,94 260,96 C280,98 300,104 310,108 C320,114 328,118 328,120" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                    <g class="steam-group" opacity="0.35">
+                        <path class="steam steam-1" d="M140,88 C136,68 142,52 138,32" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                        <path class="steam steam-2" d="M200,82 C204,60 198,44 202,22" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                        <path class="steam steam-3" d="M260,88 C256,68 262,50 258,30" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                    </g>
+                    <clipPath id="cupClip">
+                        <path d="M72,120 C70,130 68,160 68,200 C66,240 68,280 70,290 C74,310 82,325 94,334 C106,342 128,348 164,350 C200,351 236,350 272,346 C296,342 308,334 318,322 C326,310 332,292 334,272 C338,232 336,182 332,142 C330,132 328,126 326,120 Z"/>
+                    </clipPath>
+                    <g clip-path="url(#cupClip)">
+                        <rect class="coffee-fill" id="coffeeFill" x="60" y="360" width="280" height="250" fill="var(--ink)" opacity="0.12"/>
+                        <path class="coffee-surface" id="coffeeSurface" d="M68,360 C100,355 140,358 180,354 C220,350 260,356 300,352 C320,350 335,354 340,360" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
+                    </g>
+                    <circle cx="170" cy="210" r="4" fill="var(--ink)" opacity="0.35"/>
+                    <circle cx="230" cy="210" r="4" fill="var(--ink)" opacity="0.35"/>
+                    <path d="M186,230 C192,240 208,240 214,230" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.3"/>
+                    <text x="200" y="310" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="22" fill="var(--ink)" opacity="0.25">广州</text>
+                </svg>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         Toolbar (sticky search + logo)
+         ══════════════════════════════════════════ -->
+    <div class="toolbar" id="toolbar">
+        <div class="toolbar-inner">
+            <a href="#" class="toolbar-logo">广州<em>Coffee</em></a>
+            <div class="search-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" placeholder="搜索咖啡店...">
+            </div>
+            <div class="result-count" id="resultCount"></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         Areas Bar (dark)
+         ══════════════════════════════════════════ -->
+    <div class="areas-bar">
+        <div class="areas-bar-inner">
+            <ul class="categories-list" id="areasList"></ul>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         Tags Bar (light)
+         ══════════════════════════════════════════ -->
+    <div class="categories-bar tags-bar">
+        <ul class="categories-list" id="categoriesList"></ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         Featured Section
+         ══════════════════════════════════════════ -->
+    <section class="featured-section">
+        <div class="featured-header">
+            <h2 class="featured-title">我的私藏推荐</h2>
+            <p class="featured-subtitle">这些店值得你专程跑一趟</p>
+        </div>
+        <div class="featured-scroll" id="featuredScroll"></div>
+        <!-- Coffee Cup Progress -->
+        <div class="pour-indicator" id="pourIndicator">
+            <svg class="pour-cup" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12,22 C11,23 9,25 8,32 C6,44 5,56 7,64 C8,68 10,71 14,73 C18,75 26,76 32,76 C38,76 46,75 50,73 C54,71 56,68 57,64 C59,56 58,44 56,32 C55,25 53,23 52,22" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14,73 C18,77 26,78 32,78 C38,78 46,77 50,73" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <path d="M10,22 C10,20 12,18 16,17 C22,16 28,15.5 32,15.5 C36,15.5 42,16 48,17 C52,18 54,20 54,22" stroke="var(--ink)" stroke-width="2.8" stroke-linecap="round"/>
+                <path d="M54,30 C58,30 62,33 62,40 C62,47 58,50 54,50" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+                <clipPath id="pourCupClip">
+                    <path d="M10,22 C9,25 8,32 7,40 C5.5,52 6,62 7,64 C8,68 10,71 14,73 C18,76 26,77 32,77 C38,77 46,76 50,73 C54,71 56,68 57,64 C58,62 58.5,52 57,40 C56,32 55,25 54,22 Z"/>
+                </clipPath>
+                <g clip-path="url(#pourCupClip)">
+                    <rect class="pour-liquid" id="pourLiquid" x="5" y="78" width="54" height="60" fill="var(--ink)" opacity="0.15"/>
+                    <path class="pour-surface" id="pourSurface" d="M8,78 C14,76 20,77 26,75.5 C32,74 38,76 44,75 C50,74 54,76 58,78" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.4"/>
+                </g>
+                <g class="pour-steam" id="pourSteam" opacity="0">
+                    <path d="M24,14 C23,10 25,7 24,3" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.3"/>
+                    <path d="M32,13 C33,8 31,5 32,1" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.25"/>
+                    <path d="M40,14 C39,10 41,6 40,2" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.3"/>
+                </g>
+                <circle cx="26" cy="44" r="1.8" fill="var(--ink)" opacity="0.5"/>
+                <circle cx="38" cy="44" r="1.8" fill="var(--ink)" opacity="0.5"/>
+                <path d="M28,50 C30,53 34,53 36,50" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+            </svg>
+            <span class="pour-label" id="pourLabel">1 / 1</span>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         Main Content (card grid)
+         ══════════════════════════════════════════ -->
+    <main class="main-content" id="mainContent"></main>
+
+    <!-- ══════════════════════════════════════════
+         Footer
+         ══════════════════════════════════════════ -->
+    <footer class="site-footer">
+        <p class="footer-text">广州咖啡指南 · 持续更新中</p>
+        <p class="footer-sub">收录我亲自去过的广州咖啡店 · 个人口味仅供参考</p>
+    </footer>
+
+    <!-- ══════════════════════════════════════════
+         "Why I Pick" Bubble Portal
+         ══════════════════════════════════════════ -->
+    <div class="thought-bubble-portal" id="thoughtPortal">
+        <div class="thought-dot thought-dot-1"></div>
+        <div class="thought-dot thought-dot-2"></div>
+        <div class="thought-dot thought-dot-3"></div>
+        <div class="thought-cloud">
+            <span class="thought-label">我的推荐</span>
+            <p class="thought-text" id="thoughtText"></p>
+        </div>
+    </div>
+
+    <!-- Shop Detail Modal -->
+    <div class="shop-modal" id="shopModal">
+        <div class="shop-modal-backdrop" id="shopModalBackdrop"></div>
+        <div class="shop-modal-content" id="shopModalContent"></div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
