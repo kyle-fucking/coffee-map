@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#F6F5F3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#141312" media="(prefers-color-scheme: dark)">
     <title>广州咖啡指南 | GZ Coffee Guide</title>
     <meta name="description" content="一个本地人的广州咖啡探索地图，收录天河、越秀、海珠、荔湾各区精品咖啡店，按区域、风格筛选，找到适合你的那杯。">
     <meta property="og:title" content="广州咖啡指南">
@@ -16,14 +18,8 @@
 </head>
 <body>
 
-    <!-- ══════════════════════════════════════════
-         Hero Section
-         ══════════════════════════════════════════ -->
+    <!-- ─── Hero Section ─── -->
     <section class="hero">
-        <div class="dot dot-1"></div>
-        <div class="dot dot-2"></div>
-        <div class="dot dot-3"></div>
-        <div class="dot dot-4"></div>
         <div class="overlap-slash"></div>
         <div class="corner-accent"></div>
 
@@ -35,7 +31,7 @@
                     <span class="word-wrap"><span class="word"><em>Coffee</em></span></span>
                     <span class="word-wrap"><span class="word">指南</span></span>
                 </h1>
-                <p class="hero-subtitle">用一杯好咖啡，认识这座城市</p>
+                <p class="hero-subtitle">用一杯好咖啡，认识这座城</p>
                 <div class="hero-count">
                     <div class="hero-count-item">
                         <div class="hero-count-number" id="shopCount">0</div>
@@ -52,7 +48,6 @@
                 </div>
             </div>
             <div class="hero-illustration">
-                <!-- 手绘咖啡杯 SVG -->
                 <svg class="hero-cup-svg" viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M80,120 C78,122 74,130 72,160 C68,200 66,250 70,290 C72,300 78,320 90,330 C100,340 120,345 160,348 C200,350 240,348 280,344 C300,340 310,332 320,320 C328,308 334,290 336,270 C340,230 338,180 334,140 C332,130 328,124 326,120" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                     <path d="M326,160 C340,162 360,170 370,190 C378,210 376,230 368,248 C360,262 344,270 326,272" stroke="var(--ink)" stroke-width="2.8" stroke-linecap="round" fill="none"/>
@@ -76,17 +71,9 @@
                 </svg>
             </div>
         </div>
-
-        <div class="scroll-hint">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-        </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         Toolbar (sticky search + logo)
-         ══════════════════════════════════════════ -->
+    <!-- ─── Toolbar (sticky search + logo) ─── -->
     <div class="toolbar" id="toolbar">
         <div class="toolbar-inner">
             <a href="#" class="toolbar-logo">广州<em>Coffee</em></a>
@@ -101,25 +88,7 @@
         </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         Areas Bar (dark)
-         ══════════════════════════════════════════ -->
-    <div class="areas-bar">
-        <div class="areas-bar-inner">
-            <ul class="categories-list" id="areasList"></ul>
-        </div>
-    </div>
-
-    <!-- ══════════════════════════════════════════
-         Tags Bar (light)
-         ══════════════════════════════════════════ -->
-    <div class="categories-bar tags-bar">
-        <ul class="categories-list" id="categoriesList"></ul>
-    </div>
-
-    <!-- ══════════════════════════════════════════
-         Featured Section
-         ══════════════════════════════════════════ -->
+    <!-- ─── Featured Section ─── -->
     <section class="featured-section">
         <div class="featured-header">
             <h2 class="featured-title">我的私藏推荐</h2>
@@ -153,22 +122,26 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         Main Content (card grid)
-         ══════════════════════════════════════════ -->
+    <!-- ─── Filter Bars ─── -->
+    <div class="filter-section">
+        <div class="areas-bar">
+            <ul class="categories-list" id="areasList"></ul>
+        </div>
+        <div class="tags-bar">
+            <ul class="categories-list" id="categoriesList"></ul>
+        </div>
+    </div>
+
+    <!-- ─── Main Content (card grid) ─── -->
     <main class="main-content" id="mainContent"></main>
 
-    <!-- ══════════════════════════════════════════
-         Footer
-         ══════════════════════════════════════════ -->
+    <!-- ─── Footer ─── -->
     <footer class="site-footer">
         <p class="footer-text">广州咖啡指南 · 持续更新中</p>
         <p class="footer-sub">收录我亲自去过的广州咖啡店 · 个人口味仅供参考</p>
     </footer>
 
-    <!-- ══════════════════════════════════════════
-         "Why I Pick" Bubble Portal
-         ══════════════════════════════════════════ -->
+    <!-- ─── "Why I Pick" Bubble Portal ─── -->
     <div class="thought-bubble-portal" id="thoughtPortal">
         <div class="thought-dot thought-dot-1"></div>
         <div class="thought-dot thought-dot-2"></div>

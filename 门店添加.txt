@@ -1,0 +1,304 @@
+{
+  "id": "buzz-coffee",
+  "name": "Buzz Coffee",
+  "area": "越秀",
+  "district": "公园前",
+  "address": "越秀区起义路197号",
+  "lat": 23.1245,
+  "lng": 113.2637,
+  "tags": ["combo", "精品手冲", "浅烘培"],
+  "priceRange": "¥33-78",
+  "rating": 4.6,
+  "recommendation": "主理人常在咖啡赛事中亮相，出品稳定，比赛级品质带给大家。",
+  "highlights": ["开放式吧台", "单品SOE", "Combo"],
+  "hours": "周一至周日 10:00-19:00",
+  "metro": "公园前站 J 口步行 410 米",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": false, "outdoor": false, "dessert": true, "parking": false },
+  "createdAt": "2025-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "whoopee-coffee",
+  "name": "Whoopee! Coffee",
+  "area": "海珠",
+  "district": "江南西",
+  "feature": ture,
+  "address": "海珠区江南大道中209号103穗花新村月季楼楼下商铺",
+  "lat": 23.0935,
+  "lng": 113.2761,
+  "tags": ["自烘培", "Combo", "社区小店", "蛋糕甜品"],
+  "priceRange": "¥22-42",
+  "rating": 4.8,
+  "recommendation": "江南西宝藏社区小店，复古红门头超吸睛，店里的小狗超级可爱，蛋糕出品非常稳定，好吃不腻",
+  "highlights": ["Combo", "蛋糕", "SOE美式"],
+  "hours": "周二周三店休；周一动态调整，周四周五 10:00-18:00",周末12:00-18:00
+  "metro": "江南西站 B 口步行 200 米",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": true, "outdoor": true, "dessert": true, "parking": false },
+  "createdAt": "2021-02-01",
+  "updatedAt": "2024-12-01"
+}
+
+{
+  "id": "sinamon-coffee",
+  "name": "Sinamon Coffee-Bakery",
+  "area": "天河",
+  "district": "体育东路",
+  "address": "天河区体育东路48号（富丽花苑内）",
+  "lat": 23.1321,
+  "lng": 113.3263,
+  "tags": ["面包烘焙", "肉桂dirty", "社区小店"],
+  "priceRange": "¥20-45",
+  "rating": 4.5,
+  "recommendation": "前面包师打造的温暖社区店，招牌肉桂dirty与特色抹茶拿铁香气独特。",
+  "highlights": ["肉桂dirty", "抹茶拿铁", "每日现烤面包"],
+  "hours": "周一至周五 08:00-19:00；周六周日 10:00-19:00",
+  "metro": "近体育西路站",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": false, "outdoor": true, "dessert": true, "parking": false },
+  "createdAt": "2024-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "ssaw-coffee",
+  "name": "SSAW·四序咖啡",
+  "area": "荔湾",
+  "district": "永庆坊",
+  "address": "荔湾区恩宁路多宝南横9号",
+  "feature": ture,
+  "lat": 23.1131,
+  "lng": 113.2375,
+  "tags": ["西关大屋", "特调", "手冲茶", "冠军豆"],
+  "priceRange": "¥38-78",
+  "rating": 4.6,
+  "recommendation": "旧西关大屋改造，以四季为灵感的静谧庭院，特调与手冲茶极具东方韵味。",
+  "highlights": ["青山在特调", "手冲茶", "冠军豆", "季节甜点"],
+  "hours": "周一至周日 10:00-20:30",
+  "metro": "黄沙站 B 出口步行约 10 分钟",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": false, "outdoor": true, "dessert": true, "parking": false },
+  "createdAt": "2021-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "cafe-modori",
+  "name": "Cafe Modori 围巾咖啡屋",
+  "area": "越秀",
+  "district": "农讲所",
+  "address": "越秀区金鱼塘44号",
+  "lat": 23.1230,
+  "lng": 113.2678,
+  "tags": ["精品手冲", "自烘培", "社区小店"],
+  "priceRange": "¥28-78",
+  "rating": 4.5,
+  "recommendation": "主理人希望“围巾”能像它给人的感觉一样，themselves是经验丰富的咖啡师和烘培师，会将比赛级的专业理念融入日常出品中",
+  "highlights": ["Combo", "手冲咖啡", "创意特调"],
+  "hours": "周一、周三至周日 10:00-19:00（周二店休）",
+  "metro": "农讲所站 D 口步行 470 米",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": false, "outdoor": true, "dessert": true, "parking": false },
+  "createdAt": "2023-06-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "kumquat-coffee",
+  "name": "金柑咖啡商店",
+  "area": "越秀",
+  "district": "农讲所",
+  "address": "越秀区文德路仁康里38号-2",
+  "lat": 23.1226,
+  "lng": 113.2762,
+  "tags": ["自烘焙", "手冲", "外豆", "社区小店"],
+  "priceRange": "¥23-58",
+  "rating": 4.5,
+  "recommendation": "从永庆坊迁至农讲所的宝藏手冲店，歌单品味极佳，氛围像在大客厅里轻松交流，店里选豆多以外豆为主，像射手，sey，tant这些海外烘培商你都可以在这喝到",
+  "highlights": ["传统布丁", "手冲咖啡", "抹茶苹果汁", "海外咖啡豆"],
+  "hours": "周二至周日 11:00-18:00",
+  "metro": "农讲所站 D 口步行 470 米",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": false, "outdoor": false, "dessert": true, "parking": false },
+  "createdAt": "2023-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "flow-coffee",
+  "name": "FLOW 流点咖啡（东山口店）",
+  "area": "越秀",
+  "district": "东山口",
+  "address": "越秀区保安南街2-3号",
+  "lat": 23.1188,
+  "lng": 113.2957,
+  "tags": ["Combo", "特调咖啡"],
+  "priceRange": "¥28-45",
+  "rating": 4.5,
+  "recommendation": "滨江老店升级，蓝色飞鸟logo、清凉泳池风，夏季特调与奶油卷是绝配。",
+  "highlights": ["氮气Combo", "墨西哥树莓特调", "猫店长阿花", "奶油卷"],
+  "hours": "周一至周日 10:00-19:00",
+  "metro": "东山口站步行约 15 分钟",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": true, "outdoor": true, "dessert": true, "parking": false },
+  "createdAt": "2024-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "deeper-coffee",
+  "name": "deeper² Coffee",
+  "area": "越秀",
+  "district": "西门口",
+  "address": "越秀区福泉街18号105铺",
+  "feature": ture
+  "lat": 23.1243,
+  "lng": 113.2541,
+  "tags": ["特调咖啡", "SOE", "前OPS团队", "手冲"],
+  "priceRange": "¥38-78",
+  "rating": 4.6,
+  "recommendation": "上海OPS前咖啡师主理，自家烘焙的精品巧克力与热带风格特调不容错过。",
+  "highlights": ["一豆三喝", "精品手冲", "创意咖啡"],
+  "hours": "周一至周日 10:00-19:00",
+  "metro": "公园前站 L2 出口步行 500 米",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": false, "outdoor": true, "dessert": true, "parking": false },
+  "createdAt": "2023-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "round-to-coffee",
+  "name": "Round to Coffee",
+  "area": "越秀",
+  "district": "农讲所",
+  "address": "越秀区长塘街83号111铺",
+  "lat": 23.1218,
+  "lng": 113.2715,
+  "tags": ["Combo", "特调咖啡", "社区小店", "自烘面包"],
+  "priceRange": "¥30-78",
+  "rating": 4.5,
+  "recommendation": "The Path Cafe前咖啡师打造，绿色原木风空间，创意特调与手工面包超治愈。",
+  "highlights": ["小白兔/小黑兔特调", "肉桂拿铁", "一豆三喝"],
+  "hours": "周一至周日 10:00-19:00",
+  "metro": "农讲所站 A 口步行 420 米",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": false, "outdoor": true, "dessert": true, "parking": false },
+  "createdAt": "2024-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "dang-coffee",
+  "name": "dang³ 凳仔咖啡",
+  "area": "天河",
+  "district": "六运小区",
+  "address": "天河区六运七街19号105",
+  "feature": ture
+  "lat": 23.1352,
+  "lng": 113.3238,
+  "tags": ["Combo", "意式单品（SOE）", "社区小店"],
+  "priceRange": "¥23-48",
+  "rating": 4.7,
+  "recommendation": "前JPG咖啡师团队作品，港式省凳元素反差拉满，特调gulu gulu极具创意。",
+  "highlights": ["省凳文化", "gulu gulu特调", "高性价比"],
+  "hours": "周一至周日 10:00-18:30",
+  "metro": "石牌桥站步行 10 分钟",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": false, "outdoor": true, "dessert": false, "parking": false },
+  "createdAt": "2024-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "jinli-erwei",
+  "name": "尽力而为咖啡",
+  "area": "海珠",
+  "district": "琶洲",
+  "address": "海珠区石基路610号/609号（近黄埔古港）",
+  "feature": ture
+  "lat": 23.1001,
+  "lng": 113.3712,
+  "tags": ["冠军烘焙", "浅烘培", "精品手冲"],
+  "priceRange": "¥37-58",
+  "rating": 4.8,
+  "recommendation": "2023世界咖啡烘焙大赛中国冠军宋春丹主理，世界级手冲天堂。",
+  "highlights": ["瑰夏村金标", "手冲", "冠军豆", "江边独栋", "冠军烘培"],
+  "hours": "周三店休；周一、二、四、五 10:00-19:00",
+  "metro": "近万胜围站",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": false, "outdoor": true, "dessert": false, "parking": true },
+  "createdAt": "2023-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "renren-coffee",
+  "name": "忍忍咖啡",
+  "area": "越秀",
+  "district": "惠吉西",
+  "address": "越秀区惠吉西路23号102",
+  "lat": 23.1248,
+  "lng": 113.2599,
+  "tags": ["Dirty", "特调", "手作器物"],
+  "priceRange": "¥38-58",
+  "rating": 4.5,
+  "recommendation": "自带庭院的老城区咖啡馆，日系美学与静谧空间，是i人治愈地。",
+  "highlights": ["琥珀黄油脏Dirty", "手冲", "禁止蕉绿脏Dirty"],
+  "hours": "周一至周日 10:00-20:00",
+  "metro": "西门口站 B 口步行 420 米",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": true, "outdoor": true, "dessert": true, "parking": false },
+  "createdAt": "2021-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "lot3-coffee",
+  "name": "Lot#3",
+  "area": "海珠",
+  "district": "沙园",
+  "address": "海珠区沙渡路1号136",
+  "lat": 23.0788,
+  "lng": 113.2637,
+  "tags": ["自烘焙", "超萃咖啡", "精品手冲", "创意特调"],
+  "priceRange": "¥35-58",
+  "rating": 4.5,
+  "recommendation": "工业仓库改造，超萃咖啡是招牌，结合了日晒与水洗瑰夏的浓缩基底风味极佳[reference:0]。",
+  "highlights": ["超萃咖啡", "斑斓椰香拿铁", "自烘焙豆"],
+  "hours": "周一至周日 11:00-18:30",
+  "metro": "沙园站",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": true, "outdoor": false, "dessert": true, "parking": false },
+  "createdAt": "2025-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "rose-cafe",
+  "name": "玫瑰咖啡 ROSECAFE",
+  "area": "越秀",
+  "district": "中山六路",
+  "address": "越秀区中山六路惠和坊9号",
+  "lat": 23.1249,
+  "lng": 113.2572,
+  "tags": ["自家烘焙", "精品咖啡", "老字号", "手冲"],
+  "priceRange": "¥35-60",
+  "rating": 4.5,
+  "recommendation": "广州精品咖啡“鼻祖”，二十多年老字号，自家烘焙豆种类超百种，每杯咖啡都有独特“身份证”,为数不多有出品也门咖啡的门店",
+  "highlights": ["超百种自烘豆", "精品手冲", "咖啡豆" ,"咖啡器具研发"],
+  "hours": "周二至周日 12:00-20:30",
+  "metro": "西门口站 B 口步行 290 米",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": true, "outdoor": false, "dessert": true, "parking": false },
+  "createdAt": "2025-01-01",
+  "updatedAt": "2025-12-01"
+}
+
+{
+  "id": "cobble-stone",
+  "name": "Cobble Stone Coffee 鹅卵石咖啡",
+  "area": "天河",
+  "district": "体育东路",
+  "address": "天河区体育东路72号1层",
+  "lat": 23.1327,
+  "lng": 113.3293,
+  "tags": ["精品手冲", "特调咖啡", "combo", "社区小店"],
+  "priceRange": "¥36-50",
+  "rating": 4.5,
+  "recommendation": "藏在街角的温暖社区店，门前弧形玻璃非常出片，手写菜单很有质感，combo性价比高[reference:17][reference:18]。",
+  "highlights": ["美式复古风", "一豆三喝Combo", "精品手冲", "极浅烘"],
+  "hours": "周一至周日 10:30-20:30",
+  "metro": "石牌桥站 A 口步行 500 米",
+  "features": { "wifi": true, "powerOutlets": true, "petFriendly": true, "outdoor": true, "dessert": true, "parking": false },
+  "createdAt": "2025-01-01",
+  "updatedAt": "2025-12-01"
+}
