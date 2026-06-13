@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/map.css">
 </head>
 <body>
 
@@ -85,6 +86,10 @@
                 <input type="text" id="searchInput" placeholder="搜索咖啡店...">
             </div>
             <div class="result-count" id="resultCount"></div>
+            <div class="view-toggle" id="viewToggle">
+                <button class="view-toggle-btn active" data-view="list">列表</button>
+                <button class="view-toggle-btn" data-view="map">地图</button>
+            </div>
         </div>
     </div>
 
@@ -95,6 +100,11 @@
             <p class="featured-subtitle">这些店值得你专程跑一趟</p>
         </div>
         <div class="featured-scroll" id="featuredScroll"></div>
+        <!-- Custom Scrollbar -->
+        <div class="featured-scrollbar" id="featuredScrollbar">
+            <div class="featured-scrollbar-track"></div>
+            <div class="featured-scrollbar-thumb" id="featuredScrollbarThumb"></div>
+        </div>
         <!-- Coffee Cup Progress -->
         <div class="pour-indicator" id="pourIndicator">
             <svg class="pour-cup" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,10 +137,13 @@
         <div class="areas-bar">
             <ul class="categories-list" id="areasList"></ul>
         </div>
-        <div class="tags-bar">
+                <div class="tags-bar">
             <ul class="categories-list" id="categoriesList"></ul>
         </div>
     </div>
+
+    <!-- ─── Map Container ─── -->
+    <div class="map-container" id="mapContainer"></div>
 
     <!-- ─── Main Content (card grid) ─── -->
     <main class="main-content" id="mainContent"></main>
@@ -158,7 +171,19 @@
         <div class="shop-modal-content" id="shopModalContent"></div>
     </div>
 
+    <script src="js/config.js"></script>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+    <script>
+        // 全局脚本加载错误捕获
+        window.addEventListener('error', function(e) {
+            if (e.target && e.target.tagName === 'SCRIPT') {
+                document.body.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;font-size:1.2rem;color:#1C1A18;"><p style="font-size:2rem;margin-bottom:1rem;">⚠️</p><h2>页面加载失败</h2><p style="color:#666;margin-top:0.5rem;">脚本加载出错，请检查网络后刷新页面</p></div>';
+            }
+        }, true);
+    </script>
 </body>
 </html>
+
+

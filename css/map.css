@@ -1,0 +1,269 @@
+﻿/* ================================
+   广州咖啡指南 — 地图模块样式
+   ================================ */
+
+/* ─── View Toggle ─── */
+.view-toggle {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px;
+    flex-shrink: 0;
+}
+
+.view-toggle-btn {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    background: transparent;
+    color: var(--ink-faded);
+    transition: all 0.25s ease;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.view-toggle-btn.active {
+    background: var(--surface-elevated);
+    color: var(--ink);
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(28,26,24,0.1);
+}
+
+.view-toggle-btn:hover:not(.active) {
+    color: var(--ink);
+}
+
+/* ─── Map Container ─── */
+.map-container {
+    display: none;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease;
+    position: relative;
+    background: var(--surface);
+}
+
+.map-container.active {
+    display: block;
+    height: calc(100vh - 56px - 78px);
+    min-height: 400px;
+}
+
+.main-content.map-hidden {
+    display: none;
+}
+
+/* ─── Custom Marker ─── */
+.map-marker {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.map-marker:hover {
+    transform: scale(1.15);
+    z-index: 200 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.map-marker-text {
+    font-family: "Noto Sans SC", "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.map-marker-star {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    font-size: 11px;
+    color: #FFD700;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    line-height: 1;
+}
+
+.map-marker-featured {
+    border-color: #D4B44A !important;
+}
+
+/* ─── Cluster ─── */
+.map-cluster {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2B5F8A, #4A7A9E);
+    border: 2.5px solid #6B9FC6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(43,95,138,0.35);
+    cursor: pointer;
+}
+
+/* ─── Info Window ─── */
+.map-info-window {
+    padding: 6px 4px;
+    min-width: 180px;
+    font-family: "Noto Sans SC", "DM Sans", sans-serif;
+}
+
+.map-info-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1C1A18;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.map-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.map-info-area {
+    color: #7D766E;
+}
+
+.map-info-rating {
+    color: #B8963E;
+    font-weight: 500;
+}
+
+.map-info-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.map-info-tag {
+    font-size: 11px;
+    padding: 1px 6px;
+    border: 1px solid #D6D3CD;
+    border-radius: 10px;
+    color: #7D766E;
+}
+
+.map-info-btn {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background: #2B5F8A;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: "Noto Sans SC", sans-serif;
+}
+
+.map-info-btn:hover {
+    background: #3572A0;
+}
+
+/* ─── Map Error State ─── */
+.map-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.map-error-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    color: var(--ink-faded);
+    opacity: 0.4;
+}
+
+.map-error-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+}
+
+.map-error-desc {
+    font-size: 0.85rem;
+    color: var(--ink-faded);
+    margin-bottom: 0.5rem;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+.map-error-hint {
+    font-size: 0.78rem;
+    color: var(--ink-faded);
+    opacity: 0.7;
+}
+
+.map-error-hint a {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+    .view-toggle-btn {
+        font-size: 0.72rem;
+        padding: 3px 10px;
+    }
+
+    .map-container.active {
+        height: calc(100vh - 56px - 120px);
+        min-height: 300px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .map-marker {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .map-cluster {
+        background: linear-gradient(135deg, #4A7A9E, #6B9FC6);
+        border-color: #8BB8D8;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .map-info-name {
+        color: #E8E4DE;
+    }
+
+    .map-info-area {
+        color: #7A746C;
+    }
+
+    .map-info-tag {
+        border-color: #383532;
+        color: #7A746C;
+    }
+}

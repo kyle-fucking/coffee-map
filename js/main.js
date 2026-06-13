@@ -18,8 +18,7 @@ const ICONS = {
     close: `<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`,
 };
 
-// 高德地图配置
-const AMAP_KEY = '17ba3c6b58074e3923bb2db49040139217ba3c6b58074e3923bb2db490401392';  // 请替换为你的高德 Web API Key
+// 高德地图配置 — 密钥统一在 config.js 的 CONFIG.AMAP_KEY
 function getAmapUrl(shop) {
     // 根据地址在高德地图中搜索定位，使用高德自有地理编码更准确
     const query = encodeURIComponent(shop.address + ' ' + shop.name);
@@ -41,16 +40,36 @@ const $$ = (sel) => document.querySelectorAll(sel);
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    renderHeroStats();
-    renderAreasBar();
-    renderTagsBar();
-    renderFeatured();
-    renderShopGrid();
-    setupToolbar();
-    setupSearch();
-    setupModal();
-    setupThoughtBubble();
-    setupPourIndicator();
+    try {
+        renderHeroStats();
+        renderAreasBar();
+        renderTagsBar();
+        setupFilterListeners();
+        renderFeatured();
+        renderShopGrid();
+        setupToolbar();
+        setupSearch();
+        setupModal();
+        setupThoughtBubble();
+        setupPourIndicator();
+        setupViewToggle();
+    } catch (err) {
+        console.error('[CoffeeMap] 初始化失败:', err);
+        showInitError(err.message || '未知错误');
+    }
+}
+
+function showInitError(msg) {
+    const main = $('#mainContent');
+    if (!main) return;
+    main.innerHTML = `
+        <div class="init-error">
+            <div class="init-error-icon">⚠️</div>
+            <h2 class="init-error-title">页面加载遇到问题</h2>
+            <p class="init-error-desc">${msg}</p>
+            <p class="init-error-hint">请尝试刷新页面，如果问题持续请联系开发者</p>
+        </div>
+    `;
 }
 
 // Hero Stats (animated counter)
@@ -84,21 +103,11 @@ function animateCounter(elId, target, isFloat = false) {
     }, delay);
 }
 
-// Toolbar (show on scroll)
+// Toolbar (always visible)
 function setupToolbar() {
     const toolbar = $('#toolbar');
-    const hero = $('.hero');
-    if (!toolbar || !hero) return;
-
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            toolbar.classList.toggle('visible', !entry.isIntersecting);
-        },
-        { threshold: 0.1 }
-    );
-    observer.observe(hero);
+    if (toolbar) toolbar.classList.add('visible');
 }
-
 // Areas Bar
 function renderAreasBar() {
     const list = $('#areasList');
@@ -111,16 +120,6 @@ function renderAreasBar() {
         html += `<li class="${state.activeArea === area ? 'active' : ''}" data-area="${area}">${area} (${count})</li>`;
     });
     list.innerHTML = html;
-
-    list.addEventListener('click', (e) => {
-        const li = e.target.closest('li');
-        if (!li) return;
-        state.activeArea = li.dataset.area || null;
-        renderAreasBar();
-        renderTagsBar();
-        renderShopGrid();
-        updateResultCount();
-    });
 }
 
 // Tags Bar
@@ -146,12 +145,24 @@ function renderTagsBar() {
         });
     });
     list.innerHTML = html;
+}
 
-    list.addEventListener('click', (e) => {
+// Filter listeners (attached once to prevent stacking)
+function setupFilterListeners() {
+    $('#areasList').addEventListener('click', (e) => {
+        const li = e.target.closest('li');
+        if (!li) return;
+        state.activeArea = li.dataset.area || null;
+        renderAreasBar();
+        renderTagsBar();
+        renderShopGrid();
+        updateResultCount();
+    });
+
+    $('#categoriesList').addEventListener('click', (e) => {
         const li = e.target.closest('li');
         if (!li) return;
         const tag = li.dataset.tag;
-
         if (!tag) {
             state.activeTags = [];
         } else {
@@ -193,11 +204,15 @@ function renderFeatured() {
 
     container.innerHTML = featured.map((shop, i) => {
         const colorIdx = shop.id.length % CARD_COLORS.length;
+        const hasPhoto = shop.photos && shop.photos.length > 0;
         const initial = shop.name.charAt(0);
         return `
             <div class="featured-card" data-shop-id="${shop.id}">
                 <div class="featured-card-img" style="background: ${CARD_COLORS[colorIdx]}">
-                    <span class="initial">${initial}</span>
+                    ${hasPhoto
+                        ? `<img class="featured-photo" src="${shop.photos[0]}" alt="${shop.name}" loading="lazy">`
+                        : `<span class="initial">${initial}</span>`
+                    }
                     <span class="featured-card-area">${shop.area} · ${shop.district}</span>
                     <span class="featured-card-rating">★ ${shop.rating}</span>
                 </div>
@@ -229,7 +244,107 @@ function renderFeatured() {
         });
     });
 
+    // 精选图片懒加载
+    container.querySelectorAll('.featured-photo').forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => img.classList.add('loaded'));
+            img.addEventListener('error', () => { img.style.display = 'none'; });
+        }
+    });
+
     container.addEventListener('scroll', updatePourFromScroll);
+    setupFeaturedScrollbar();
+}
+
+// Custom Scrollbar for Featured Section
+function setupFeaturedScrollbar() {
+    const container = $('#featuredScroll');
+    const scrollbar = $('#featuredScrollbar');
+    const thumb = $('#featuredScrollbarThumb');
+    if (!container || !scrollbar || !thumb) return;
+
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let thumbWidthRatio = 0;
+
+    function updateThumb() {
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        if (maxScroll <= 0) {
+            scrollbar.classList.remove('visible');
+            return;
+        }
+        scrollbar.classList.add('visible');
+        thumbWidthRatio = container.clientWidth / container.scrollWidth;
+        thumb.style.width = Math.max(thumbWidthRatio * 100, 8) + '%';
+        const progress = container.scrollLeft / maxScroll;
+        const availableWidth = scrollbar.clientWidth - thumb.offsetWidth;
+        thumb.style.left = progress * availableWidth + 'px';
+    }
+
+    function scrollToThumbPosition(x) {
+        const trackRect = scrollbar.getBoundingClientRect();
+        const thumbRect = thumb.getBoundingClientRect();
+        const availableWidth = scrollbar.clientWidth - thumb.offsetWidth;
+        let offsetX = x - trackRect.left - thumb.offsetWidth / 2;
+        offsetX = Math.max(0, Math.min(offsetX, availableWidth));
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        container.scrollLeft = (offsetX / availableWidth) * maxScroll;
+    }
+
+    thumb.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startScrollLeft = container.scrollLeft;
+        thumb.classList.add('dragging');
+        e.preventDefault();
+    });
+
+    thumb.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        startScrollLeft = container.scrollLeft;
+        thumb.classList.add('dragging');
+        e.preventDefault();
+    }, { passive: false });
+
+    function onMove(clientX) {
+        if (!isDragging) return;
+        const deltaX = clientX - startX;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        const availableWidth = scrollbar.clientWidth - thumb.offsetWidth;
+        const scrollDelta = (deltaX / availableWidth) * maxScroll;
+        container.scrollLeft = Math.max(0, Math.min(startScrollLeft + scrollDelta, maxScroll));
+    }
+
+    window.addEventListener('mousemove', (e) => onMove(e.clientX));
+    window.addEventListener('touchmove', (e) => {
+        if (isDragging) e.preventDefault();
+        onMove(e.touches[0].clientX);
+    }, { passive: false });
+
+    function onEnd() {
+        isDragging = false;
+        thumb.classList.remove('dragging');
+    }
+
+    window.addEventListener('mouseup', onEnd);
+    window.addEventListener('touchend', onEnd);
+
+    scrollbar.addEventListener('click', (e) => {
+        if (e.target === thumb || thumb.contains(e.target)) return;
+        scrollToThumbPosition(e.clientX);
+    });
+
+    // 窗口大小变化时重新计算
+    window.addEventListener('resize', updateThumb);
+
+    // 注意：thumb 位置由 updatePourFromScroll 在滚动时统一更新，这里不再重复监听 scroll
+
+    // 初始化
+    updateThumb();
 }
 
 // Pour Indicator
@@ -267,6 +382,22 @@ function updatePourFromScroll() {
     const cardWidth = cards[0].offsetWidth + 20;
     const currentIndex = Math.round(scrollLeft / cardWidth) + 1;
     label.textContent = `${Math.min(currentIndex, cards.length)} / ${cards.length}`;
+
+    // 同步滑动条
+    const scrollbar = $('#featuredScrollbar');
+    const thumb = $('#featuredScrollbarThumb');
+    if (scrollbar && thumb) {
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        if (maxScroll > 0) {
+            scrollbar.classList.add('visible');
+            const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+            const availableWidth = scrollbar.clientWidth - thumb.offsetWidth;
+            thumb.style.left = progress * availableWidth + 'px';
+            thumb.style.width = Math.max((container.clientWidth / container.scrollWidth) * 100, 8) + '%';
+        } else {
+            scrollbar.classList.remove('visible');
+        }
+    }
 }
 
 // Shop Grid
@@ -308,17 +439,37 @@ function renderShopGrid() {
             if (shop) window.open(getAmapUrl(shop), '_blank');
         });
     });
+
+    // 图片懒加载 — 加载完成后渐入
+    container.querySelectorAll('.shop-photo').forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => img.classList.add('loaded'));
+            img.addEventListener('error', () => { img.style.display = 'none'; });
+        }
+    });
+
+    // 同步更新地图标记（如果地图视图激活）
+    if (typeof updateMarkers === 'function' && document.getElementById('mapContainer')?.classList.contains('active')) {
+        updateMarkers(getFilteredShops());
+    }
 }
 
 function renderShopCard(shop) {
     const colorIdx = shop.id.length % CARD_COLORS.length;
+    const hasPhoto = shop.photos && shop.photos.length > 0;
     const initial = shop.name.charAt(0);
     return `
-        <div class="shop-card" data-shop-id="${shop.id}">
+        <div class="shop-card ${shop.closed ? 'shop-card--closed' : ''}" data-shop-id="${shop.id}">
             <div class="shop-card-img" style="background: ${CARD_COLORS[colorIdx]}">
-                <span class="initial">${initial}</span>
+                ${hasPhoto
+                    ? `<img class="shop-photo" src="${shop.photos[0]}" alt="${shop.name}" loading="lazy">`
+                    : `<span class="initial">${initial}</span>`
+                }
                 <span class="shop-area-badge">${shop.area}</span>
                 <span class="shop-rating-badge">★ ${shop.rating}</span>
+                ${shop.closed ? `<div class="shop-closed-overlay"><span class="shop-closed-badge">已停业</span></div>` : ''}
             </div>
             <div class="shop-card-body">
                 <div class="shop-card-name">${shop.name}</div>
@@ -422,19 +573,35 @@ function openShopModal(shopId) {
         { key: 'parking', label: '好停车', icon: ICONS.parking },
     ];
 
+    const hasPhoto = shop.photos && shop.photos.length > 0;
+
     content.innerHTML = `
         <div class="modal-close-btn">
             <button id="modalCloseBtn">${ICONS.close}</button>
         </div>
-        <div style="height: 160px; background: ${CARD_COLORS[colorIdx]}; display: flex; align-items: center; justify-content: center;">
+        ${hasPhoto ? `
+        <div class="modal-photo-gallery">
+            <div class="modal-photo-main">
+                <img src="${shop.photos[0]}" alt="${shop.name}" class="modal-photo-img">
+            </div>
+            ${shop.photos.length > 1 ? `
+            <div class="modal-photo-thumbs">
+                ${shop.photos.map((p, i) => `
+                    <img src="${p}" alt="${shop.name}" class="modal-photo-thumb ${i === 0 ? 'active' : ''}" data-idx="${i}">
+                `).join('')}
+            </div>` : ''}
+        </div>`
+        : `<div style="height: 160px; background: ${CARD_COLORS[colorIdx]}; display: flex; align-items: center; justify-content: center;">
             <span style="font-family: var(--font-display); font-size: 4rem; opacity: 0.4; color: rgba(255,255,255,0.6);">${shop.name.charAt(0)}</span>
-        </div>
+        </div>`
+        }
         <div class="modal-header">
             <h2 class="modal-shop-name">${shop.name}</h2>
             <p class="modal-shop-location">${shop.area} · ${shop.district}</p>
             <div class="modal-tags">
                 ${shop.tags.map(t => `<span>${t}</span>`).join('')}
             </div>
+            ${shop.closed ? `<div class="modal-closed-banner">该门店已停业</div>` : ''}
             <div class="modal-rating-row">
                 <span class="modal-rating-big">${shop.rating}</span>
                 <span class="modal-stars">${stars}</span>
@@ -487,6 +654,20 @@ function openShopModal(shopId) {
     document.body.style.overflow = 'hidden';
 
     content.querySelector('#modalCloseBtn').addEventListener('click', closeShopModal);
+
+    // 缩略图切换主图
+    const modalPhotos = content.querySelector('.modal-photo-gallery');
+    if (modalPhotos && shop.photos && shop.photos.length > 1) {
+        const mainImg = modalPhotos.querySelector('.modal-photo-img');
+        modalPhotos.querySelectorAll('.modal-photo-thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                const idx = parseInt(thumb.dataset.idx);
+                mainImg.src = shop.photos[idx];
+                modalPhotos.querySelectorAll('.modal-photo-thumb').forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+            });
+        });
+    }
 
     content.querySelectorAll('.modal-related-item').forEach(item => {
         item.addEventListener('click', () => {
@@ -546,5 +727,45 @@ function hideThoughtBubble() {
     const portal = $('#thoughtPortal');
     if (portal) portal.classList.remove('visible');
 }
+
+
+
+
+let currentView = 'list';
+
+function setupViewToggle() {
+    const toggle = document.getElementById('viewToggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', (e) => {
+        const btn = e.target.closest('.view-toggle-btn');
+        if (!btn) return;
+
+        const view = btn.dataset.view;
+        if (view === currentView) return;
+
+        // Update button states
+        toggle.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentView = view;
+
+        if (view === 'map') {
+            const shops = getFilteredShops();
+            switchToMapView(shops);
+        } else {
+            switchToListView();
+        }
+    });
+}
+
+function updateMapForCurrentView() {
+    const shops = getFilteredShops();
+    // Only update if map is initialized
+    if (typeof mapInstance !== 'undefined' && mapInstance) {
+        updateMarkers(shops);
+    }
+}
+
+
 
 
