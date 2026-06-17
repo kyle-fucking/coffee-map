@@ -9,8 +9,8 @@ const coffeeShops = [
         district: "区庄",
         address: "越秀区东风东路733号羊城同创汇编辑楼1楼101",
         featured: true,
-        lat: 23.1339,
-        lng: 113.2832,
+        lat: 23.131959,
+        lng: 113.300867,
         tags: ["创意特调", "自烘焙"],
         priceRange: "¥28-45",
         rating: 4.6,
@@ -20,7 +20,7 @@ const coffeeShops = [
         metro: "区庄站 B2 口步行约 10 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: false, parking: false },
         createdAt: "2026-02-15",
-        updatedAt: "2026-06-01"
+        updatedAt: "2026-06-01",        photos: [],
     },
     {
         id: "kaqi-coffee",
@@ -29,8 +29,8 @@ const coffeeShops = [
         district: "农讲所",
         address: "越秀区文德路仁康里38号首层南侧",
         featured: true,
-        lat: 23.1224,
-        lng: 113.2763,
+        lat: 23.12394,
+        lng: 113.273095,
         tags: ["自烘焙", "精品手冲"],
         priceRange: "¥18-35",
         rating: 4.8,
@@ -40,7 +40,7 @@ const coffeeShops = [
         metro: "农讲所站 A 口步行约 10 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-02-15",
-        updatedAt: "2026-06-01"
+        updatedAt: "2026-06-01",        photos: [],
     },
     {
         id: "huixiang-coffee",
@@ -49,8 +49,8 @@ const coffeeShops = [
         district: "德政北路",
         address: "越秀区德政北路502-504号首层自编之四",
         featured: true,
-        lat: 23.1268,
-        lng: 113.2735,
+        lat: 23.129349,
+        lng: 113.274532,
         tags: ["自烘焙", "精品手冲"],
         priceRange: "¥25-45",
         rating: 4.6,
@@ -60,7 +60,7 @@ const coffeeShops = [
         metro: "农讲所站步行约 12 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-02-15",
-        updatedAt: "2026-06-01"
+        updatedAt: "2026-06-01",        photos: [],
     },
     {
         id: "tickup-coffee",
@@ -69,8 +69,8 @@ const coffeeShops = [
         district: "荔城街道",
         address: "广州市增城区新园路3号",
         featured: true,
-        lat: 23.1178,
-        lng: 113.3198,
+        lat: 23.299242,
+        lng: 113.823428,
         tags: ["精品手冲", "浅烘培"],
         priceRange: "¥20-40",
         rating: 4.8,
@@ -80,7 +80,7 @@ const coffeeShops = [
         metro: "增城广场站打车 10 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: true },
         createdAt: "2026-06-01",
-        updatedAt: "2026-06-01"
+        updatedAt: "2026-06-01",        photos: [],
     },
     {
         id: "buzz-coffee",
@@ -88,8 +88,8 @@ const coffeeShops = [
         area: "越秀",
         district: "公园前",
         address: "越秀区起义路197号",
-        lat: 23.1245,
-        lng: 113.2637,
+        lat: 23.121349,
+        lng: 113.264006,
         tags: ["Combo", "精品手冲", "浅烘培"],
         priceRange: "¥33-78",
         rating: 4.6,
@@ -99,7 +99,7 @@ const coffeeShops = [
         metro: "公园前站 J 口步行 410 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: false, parking: false },
         createdAt: "2025-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "whoopee-coffee",
@@ -108,8 +108,8 @@ const coffeeShops = [
         district: "江南西",
         featured: true,
         address: "海珠区江南大道中209号103穗花新村月季楼楼下商铺",
-        lat: 23.0935,
-        lng: 113.2761,
+        lat: 23.095843,
+        lng: 113.275475,
         tags: ["自烘焙", "Combo"],
         priceRange: "¥22-42",
         rating: 4.8,
@@ -119,7 +119,7 @@ const coffeeShops = [
         metro: "江南西站 B 口步行 200 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2021-02-01",
-        updatedAt: "2024-12-01"
+        updatedAt: "2024-12-01",        photos: [],
     },
     {
         id: "sinamon-coffee",
@@ -127,9 +127,9 @@ const coffeeShops = [
         area: "天河",
         district: "体育东路",
         address: "天河区体育东路48号（富丽花苑内）",
-        lat: 23.1321,
-        lng: 113.3263,
-        tags: ["Dirty", "创意特调"],
+        lat: 23.132225,
+        lng: 113.329021,
+        tags: ["Dirty", "创意特调", "甜品面包"],
         priceRange: "¥20-45",
         rating: 4.5,
         recommendation: "前面包师打造的温暖社区店，招牌肉桂dirty与特色抹茶拿铁香气独特。",
@@ -138,7 +138,7 @@ const coffeeShops = [
         metro: "近体育西路站",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2024-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "ssaw-coffee",
@@ -147,8 +147,8 @@ const coffeeShops = [
         district: "永庆坊",
         address: "荔湾区恩宁路多宝南横9号",
         featured: true,
-        lat: 23.1131,
-        lng: 113.2375,
+        lat: 23.116018,
+        lng: 113.235817,
         tags: ["创意特调"],
         priceRange: "¥38-78",
         rating: 4.6,
@@ -158,7 +158,7 @@ const coffeeShops = [
         metro: "黄沙站 B 出口步行约 10 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: false, parking: false },
         createdAt: "2021-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "cafe-modori",
@@ -166,8 +166,8 @@ const coffeeShops = [
         area: "越秀",
         district: "农讲所",
         address: "越秀区金鱼塘44号",
-        lat: 23.123,
-        lng: 113.2678,
+        lat: 23.124488,
+        lng: 113.27225,
         tags: ["精品手冲", "自烘焙"],
         priceRange: "¥28-78",
         rating: 4.5,
@@ -177,7 +177,7 @@ const coffeeShops = [
         metro: "农讲所站 D 口步行 470 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2023-06-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "kumquat-coffee",
@@ -185,8 +185,8 @@ const coffeeShops = [
         area: "越秀",
         district: "农讲所",
         address: "越秀区文德路仁康里38号-2",
-        lat: 23.1226,
-        lng: 113.2762,
+        lat: 23.12434,
+        lng: 113.272811,
         tags: ["自烘焙", "精品手冲"],
         priceRange: "¥23-58",
         rating: 4.5,
@@ -196,7 +196,7 @@ const coffeeShops = [
         metro: "农讲所站 D 口步行 470 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2023-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "flow-coffee",
@@ -204,8 +204,8 @@ const coffeeShops = [
         area: "越秀",
         district: "东山口",
         address: "越秀区保安南街2-3号",
-        lat: 23.1188,
-        lng: 113.2957,
+        lat: 23.120288,
+        lng: 113.300227,
         tags: ["Combo", "创意特调"],
         priceRange: "¥28-45",
         rating: 4.5,
@@ -215,7 +215,7 @@ const coffeeShops = [
         metro: "东山口站步行约 15 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2024-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "deeper-coffee",
@@ -224,8 +224,8 @@ const coffeeShops = [
         district: "西门口",
         address: "越秀区福泉街18号105铺",
         featured: true,
-        lat: 23.1243,
-        lng: 113.2541,
+        lat: 23.126911,
+        lng: 113.259633,
         tags: ["创意特调", "意式单品（SOE）", "精品手冲"],
         priceRange: "¥38-78",
         rating: 4.6,
@@ -235,7 +235,7 @@ const coffeeShops = [
         metro: "公园前站 L2 出口步行 500 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2023-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "round-to-coffee",
@@ -243,8 +243,8 @@ const coffeeShops = [
         area: "越秀",
         district: "农讲所",
         address: "越秀区长塘街83号111铺",
-        lat: 23.1218,
-        lng: 113.2715,
+        lat: 23.124865,
+        lng: 113.272754,
         tags: ["Combo", "创意特调"],
         priceRange: "¥30-78",
         rating: 4.5,
@@ -254,7 +254,7 @@ const coffeeShops = [
         metro: "农讲所站 A 口步行 420 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2024-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "dang-coffee",
@@ -263,8 +263,8 @@ const coffeeShops = [
         district: "六运小区",
         address: "天河区六运七街19号105",
         featured: true,
-        lat: 23.1352,
-        lng: 113.3238,
+        lat: 23.130878,
+        lng: 113.331699,
         tags: ["Combo", "意式单品（SOE）"],
         priceRange: "¥23-48",
         rating: 4.7,
@@ -274,7 +274,7 @@ const coffeeShops = [
         metro: "石牌桥站步行 10 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: false, parking: false },
         createdAt: "2024-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "jinli-erwei",
@@ -283,8 +283,8 @@ const coffeeShops = [
         district: "琶洲",
         address: "海珠区石基路610号/609号（近黄埔古港）",
         featured: true,
-        lat: 23.1001,
-        lng: 113.3712,
+        lat: 23.087909,
+        lng: 113.388334,
         tags: ["浅烘培", "精品手冲"],
         priceRange: "¥37-58",
         rating: 4.8,
@@ -294,7 +294,7 @@ const coffeeShops = [
         metro: "近万胜围站",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: false, parking: true },
         createdAt: "2023-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "renren-coffee",
@@ -302,8 +302,8 @@ const coffeeShops = [
         area: "越秀",
         district: "惠吉西",
         address: "越秀区惠吉西路23号102",
-        lat: 23.1248,
-        lng: 113.2599,
+        lat: 23.126348,
+        lng: 113.259228,
         tags: ["Dirty", "创意特调"],
         priceRange: "¥38-58",
         rating: 4.5,
@@ -313,7 +313,7 @@ const coffeeShops = [
         metro: "西门口站 B 口步行 420 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2021-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "lot3-coffee",
@@ -321,8 +321,8 @@ const coffeeShops = [
         area: "海珠",
         district: "沙园",
         address: "海珠区沙渡路1号136",
-        lat: 23.0788,
-        lng: 113.2637,
+        lat: 23.082474,
+        lng: 113.254417,
         tags: ["自烘焙", "超萃咖啡", "精品手冲", "创意特调"],
         priceRange: "¥35-58",
         rating: 4.5,
@@ -332,7 +332,7 @@ const coffeeShops = [
         metro: "沙园站",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2025-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "rose-cafe",
@@ -340,8 +340,8 @@ const coffeeShops = [
         area: "越秀",
         district: "中山六路",
         address: "越秀区中山六路惠和坊9号",
-        lat: 23.1249,
-        lng: 113.2572,
+        lat: 23.124928,
+        lng: 113.259124,
         tags: ["自烘焙", "精品手冲"],
         priceRange: "¥35-60",
         rating: 4.5,
@@ -351,7 +351,7 @@ const coffeeShops = [
         metro: "西门口站 B 口步行 290 米",
         features: { wifi: true, powerOutlets: true, petFriendly: false, outdoor: false, dessert: false, parking: false },
         createdAt: "2025-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "cobble-stone",
@@ -360,8 +360,8 @@ const coffeeShops = [
         district: "体育东路",
         address: "天河区体育东路72号1层",
         featured: true,
-        lat: 23.1327,
-        lng: 113.3293,
+        lat: 23.118774,
+        lng: 113.288948,
         tags: ["精品手冲", "创意特调", "Combo"],
         priceRange: "¥36-50",
         rating: 4.7,
@@ -371,7 +371,7 @@ const coffeeShops = [
         metro: "石牌桥站 A 口步行 500 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: false, parking: false },
         createdAt: "2025-01-01",
-        updatedAt: "2025-12-01"
+        updatedAt: "2025-12-01",        photos: [],
     },
     {
         id: "wupai-signless",
@@ -380,8 +380,8 @@ const coffeeShops = [
         district: "公园前",
         address: "越秀区起义路南朝新街5号一楼",
         featured: true,
-        lat: 23.1248,
-        lng: 113.2635,
+        lat: 23.124429,
+        lng: 113.263733,
         tags: ["自烘焙", "创意特调", "精品手冲"],
         priceRange: "¥20-45",
         rating: 4.7,
@@ -391,7 +391,7 @@ const coffeeShops = [
         metro: "公园前站 J 口步行约 5 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "the-dose",
@@ -401,8 +401,8 @@ const coffeeShops = [
         address: "越秀区北京南路东横街1号",
         featured: false,
         closed: true,
-        lat: 23.1205,
-        lng: 113.2710,
+        lat: 23.120267,
+        lng: 113.271663,
         tags: ["精品手冲", "自烘焙"],
         priceRange: "¥28-58",
         rating: 4.7,
@@ -412,7 +412,7 @@ const coffeeShops = [
         metro: "北京路站 B 口步行约 220 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: false, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "the-common-cup",
@@ -422,8 +422,8 @@ const coffeeShops = [
         address: "越秀区中山六路惠吉西二坊十一号一楼",
         featured: false,
         closed: true,
-        lat: 23.1245,
-        lng: 113.2585,
+        lat: 23.126111,
+        lng: 113.258855,
         tags: ["精品手冲", "自烘焙"],
         priceRange: "¥30-50",
         rating: 4.8,
@@ -433,7 +433,7 @@ const coffeeShops = [
         metro: "西门口站步行约 10 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: false, outdoor: true, dessert: false, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "jiezi-coffee",
@@ -442,8 +442,8 @@ const coffeeShops = [
         district: "华康路",
         address: "天河区华康路（预约制，具体地址通过小程序获取）",
         featured: false,
-        lat: 23.1300,
-        lng: 113.3200,
+        lat: 23.141958,
+        lng: 113.330219,
         tags: ["精品手冲", "自烘焙"],
         priceRange: "¥88-228",
         rating: 4.7,
@@ -453,7 +453,7 @@ const coffeeShops = [
         metro: "体育中心站/石牌桥站",
         features: { wifi: true, powerOutlets: false, petFriendly: false, outdoor: false, dessert: false, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "sweetness-coffee",
@@ -462,8 +462,8 @@ const coffeeShops = [
         district: "东山口",
         address: "越秀区东华东路512号",
         featured: false,
-        lat: 23.1200,
-        lng: 113.2950,
+        lat: 23.124487,
+        lng: 113.290559,
         tags: ["精品手冲", "Dirty"],
         priceRange: "¥26-38",
         rating: 4.6,
@@ -473,7 +473,7 @@ const coffeeShops = [
         metro: "东山口站步行约 10 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: false, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "guanlin-qualia",
@@ -482,8 +482,8 @@ const coffeeShops = [
         district: "海珠广场",
         address: "越秀区起义路维新横5号首层",
         featured: false,
-        lat: 23.1180,
-        lng: 113.2620,
+        lat: 23.116467,
+        lng: 113.265161,
         tags: ["甜品面包", "创意特调"],
         priceRange: "¥30-58",
         rating: 4.4,
@@ -493,7 +493,7 @@ const coffeeShops = [
         metro: "海珠广场站 E 口步行约 5 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: false, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "silly-dog-coffee",
@@ -502,8 +502,8 @@ const coffeeShops = [
         district: "农讲所",
         address: "越秀区中山四路大塘街24号101铺",
         featured: false,
-        lat: 23.1248,
-        lng: 113.2700,
+        lat: 23.107975,
+        lng: 113.285925,
         tags: ["精品手冲", "Dirty"],
         priceRange: "¥20-40",
         rating: 4.5,
@@ -513,7 +513,7 @@ const coffeeShops = [
         metro: "农讲所站 A 口步行约 450 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "yuqiu-withchill",
@@ -522,8 +522,8 @@ const coffeeShops = [
         district: "中华广场",
         address: "越秀区中山三路北横街33号108房",
         featured: false,
-        lat: 23.1270,
-        lng: 113.2800,
+        lat: 23.128076,
+        lng: 113.279313,
         tags: ["创意特调"],
         priceRange: "¥28-45",
         rating: 4.5,
@@ -533,7 +533,7 @@ const coffeeShops = [
         metro: "烈士陵园站步行约 10 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "c-stands-for",
@@ -542,8 +542,8 @@ const coffeeShops = [
         district: "东华西路",
         address: "越秀区东华西路182号群星大厦首层",
         featured: true,
-        lat: 23.1240,
-        lng: 113.2850,
+        lat: 23.128779,
+        lng: 113.328601,
         tags: ["精品手冲", "自烘焙"],
         priceRange: "¥35-60",
         rating: 4.6,
@@ -553,7 +553,7 @@ const coffeeShops = [
         metro: "烈士陵园站 A 口步行约 780 米",
         features: { wifi: true, powerOutlets: true, petFriendly: false, outdoor: false, dessert: false, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "encore-anke",
@@ -562,8 +562,8 @@ const coffeeShops = [
         district: "江南西",
         address: "海珠区江南东路33号天汇大厦楼下商铺103号",
         featured: false,
-        lat: 23.0890,
-        lng: 113.2770,
+        lat: 23.107361,
+        lng: 113.26555,
         tags: ["精品手冲", "意式单品（SOE）"],
         priceRange: "¥25-45",
         rating: 4.4,
@@ -573,7 +573,7 @@ const coffeeShops = [
         metro: "江南西站步行约 8 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: false, outdoor: true, dessert: false, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "dirty-paws",
@@ -593,7 +593,7 @@ const coffeeShops = [
         metro: "赤岗站步行约20分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "dream-high",
@@ -602,8 +602,8 @@ const coffeeShops = [
         district: "滨江",
         address: "海珠区草芳围滨江婚育文化园46号",
         featured: false,
-        lat: 23.1080,
-        lng: 113.2710,
+        lat: 23.111218,
+        lng: 113.273905,
         tags: ["自烘焙", "精品手冲"],
         priceRange: "¥28-68",
         rating: 4.6,
@@ -613,7 +613,7 @@ const coffeeShops = [
         metro: "海珠广场站/市二宫站",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "xu-sidetrack",
@@ -622,8 +622,8 @@ const coffeeShops = [
         district: "北京路",
         address: "越秀区东横街18号101",
         featured: false,
-        lat: 23.1200,
-        lng: 113.2680,
+        lat: 23.11999,
+        lng: 113.271149,
         tags: ["创意特调"],
         priceRange: "¥35-55",
         rating: 4.5,
@@ -633,7 +633,7 @@ const coffeeShops = [
         metro: "北京路站步行约 5 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: false, outdoor: true, dessert: false, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "liangzhazha",
@@ -642,8 +642,8 @@ const coffeeShops = [
         district: "东山口",
         address: "越秀区东华东路554号",
         featured: false,
-        lat: 23.1195,
-        lng: 113.2940,
+        lat: 23.120968,
+        lng: 113.291097,
         tags: ["精品手冲"],
         priceRange: "¥20-34",
         rating: 4.5,
@@ -653,7 +653,7 @@ const coffeeShops = [
         metro: "东山口站步行约 8 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: false, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "bean-plus",
@@ -662,8 +662,8 @@ const coffeeShops = [
         district: "西门口",
         address: "越秀区中山六路惠吉西36号",
         featured: false,
-        lat: 23.1245,
-        lng: 113.2580,
+        lat: 23.126529,
+        lng: 113.259514,
         tags: ["自烘焙", "精品手冲"],
         priceRange: "¥23-38",
         rating: 4.7,
@@ -673,7 +673,7 @@ const coffeeShops = [
         metro: "西门口站 B 口步行约 460 米",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "bulldong-coffee",
@@ -682,8 +682,8 @@ const coffeeShops = [
         district: "纪念堂",
         address: "越秀区百灵路兴隆西三巷1-103",
         featured: false,
-        lat: 23.1310,
-        lng: 113.2560,
+        lat: 23.131463,
+        lng: 113.259496,
         tags: ["Combo", "精品手冲"],
         priceRange: "¥30-42",
         rating: 4.5,
@@ -693,7 +693,7 @@ const coffeeShops = [
         metro: "纪念堂站步行约 10 分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: false, outdoor: true, dessert: false, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "cupee",
@@ -702,8 +702,8 @@ const coffeeShops = [
         district: "荔城",
         address: "增城区荔城街荔乡路5号",
         featured: false,
-        lat: 23.2900,
-        lng: 113.8300,
+        lat: 23.291261,
+        lng: 113.825567,
         tags: ["精品手冲", "甜品面包"],
         priceRange: "¥20-40",
         rating: 4.5,
@@ -713,7 +713,7 @@ const coffeeShops = [
         metro: "增城广场站打车约10分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "sheung-cafe",
@@ -722,8 +722,8 @@ const coffeeShops = [
         district: "荔城",
         address: "增城区荔城街道侨中路西巷31号一层",
         featured: false,
-        lat: 23.2880,
-        lng: 113.8280,
+        lat: 23.2826,
+        lng: 113.823724,
         tags: ["精品手冲", "甜品面包"],
         priceRange: "¥28-41",
         rating: 4.5,
@@ -733,7 +733,7 @@ const coffeeShops = [
         metro: "增城广场站打车约10分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "iffy-coffee",
@@ -753,7 +753,7 @@ const coffeeShops = [
         metro: "增城广场打车10分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: true, outdoor: true, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     },
     {
         id: "jingtong-coffee",
@@ -773,7 +773,7 @@ const coffeeShops = [
         metro: "增城广场打车10分钟",
         features: { wifi: true, powerOutlets: true, petFriendly: false, outdoor: false, dessert: true, parking: false },
         createdAt: "2026-06-13",
-        updatedAt: "2026-06-13"
+        updatedAt: "2026-06-13",        photos: [],
     }
 ];
 
